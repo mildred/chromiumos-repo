@@ -1,0 +1,12 @@
+[Unit]
+Name=ChromiumOS Builder
+
+[Service]
+Type=oneshot
+Environment=RUNDIR=/run
+ExecStart=/usr/bin/fpmbot2 -datadir . /usr/share/chromiumos-repo/chromiumos-repo.yaml
+WorkingDirectory=/var/lib/fpmbot
+
+[Install]
+WantedBy=multi-user.target
+

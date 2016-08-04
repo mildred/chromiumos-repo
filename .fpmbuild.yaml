@@ -1,0 +1,19 @@
+--- 
+build:
+  build: true
+  fpmgen: true
+  install: true
+fpm:
+  - --architecture=all
+  - --version=0.1
+  - --name=chromiumos-repo
+  - -dfpmbot
+  - -sdir
+  - chromiumos-repo.yaml=/usr/share/chromiumos-repo/
+  - chromiumos-repo.service=/lib/systemd/system/
+fpm-hooks:
+  after-install: |
+    #!/bin/bash
+    set -e
+    systemctl enable --no-block chromiumos-repo.service
+
