@@ -1,3 +1,7 @@
 --- 
 target: dir
+packages:
+  cyan:
+    git: http://github.com/mildred/chromiumos-repo.git
+    dir: chromiumos
 

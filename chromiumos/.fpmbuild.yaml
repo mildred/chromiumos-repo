@@ -1,0 +1,3 @@
+--- 
+build:
+  prepare: make VERSION=release-R52-8350.B BOARD=cyan configure
