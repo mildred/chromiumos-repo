@@ -5,7 +5,6 @@ build:
   install: true
 fpm:
   - --architecture=all
-  - --version=0.1
   - --name=chromiumos-repo
   - -dfpmbot
   - -sdir
