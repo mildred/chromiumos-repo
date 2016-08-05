@@ -1,10 +1,14 @@
-export PATH:=$(shell pwd)/../depot_tools:$(PATH)
+DEPOT_TOOLS:=$(shell pwd)/../depot_tools
+export PATH:=$(DEPOT_TOOLS):$(PATH)
+export HOME:=$(shell pwd)
 
 -include config.make
 
 export BOARD
 
 build:
+	git config --global user.name User
+	git config --global user.email user@domain
 	repo init -u https://chromium.googlesource.com/chromiumos/manifest.git -b $(VERSION)
 	repo sync
 	# Fix issue
