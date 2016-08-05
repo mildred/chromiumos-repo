@@ -1,3 +1,12 @@
 --- 
 build:
   prepare: make VERSION=release-R52-8350.B BOARD=cyan configure
+env:
+  docker:
+    Dockerfile: |
+      FROM debian:stable
+      RUN apt-get update && \
+        DEBIAN_FRONTEND=noninteractive apt-get install -y \
+          git build-essential && \
+        apt-get clean
+      RUN useradd chromiumos
