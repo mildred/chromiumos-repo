@@ -7,6 +7,7 @@ export HOME:=$(shell pwd)
 export BOARD
 
 build:
+	id
 	git config --global user.name User
 	git config --global user.email user@domain
 	repo init -u https://chromium.googlesource.com/chromiumos/manifest.git -b $(VERSION)
